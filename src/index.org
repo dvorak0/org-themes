@@ -73,6 +73,7 @@ I am happy to include any theme.
 | [[file:/home/olmon/Workplace/Org/Themes/src/comfy_inline/comfy_inline.org][comfy inline]]      |
 | [[file:/home/olmon/Workplace/Org/Themes/src/darksun/darksun.org][darksun]]           |
 | [[file:/home/olmon/Workplace/Org/Themes/src/imagine_light/imagine_light.org][imagine light]]     |
+| [[file:/home/olmon/Workplace/Org/Themes/src/latexcss/latexcss.org][latexcss]]          |
 | [[file:/home/olmon/Workplace/Org/Themes/src/plain/plain.org][plain]]             |
 | [[file:/home/olmon/Workplace/Org/Themes/src/readtheorg_inline/readtheorg_inline.org][readtheorg inline]] |
 | [[file:/home/olmon/Workplace/Org/Themes/src/rethink_inline/rethink_inline.org][rethink inline]]    |
@@ -84,6 +85,7 @@ I am happy to include any theme.
 | [[file:/home/olmon/Workplace/Org/Themes/src/solarized_dark/solarized_dark.org][solarized dark]]    |
 | [[file:/home/olmon/Workplace/Org/Themes/src/solarized_light/solarized_light.org][solarized light]]   |
 | [[file:/home/olmon/Workplace/Org/Themes/src/stylish_white/stylish_white.org][stylish white]]     |
+| [[file:/home/olmon/Workplace/Org/Themes/src/white_clean/white_clean.org][white clean]]       |
 
 
 #+begin_src emacs-lisp :exports none
@@ -104,6 +106,21 @@ I am happy to include any theme.
 | orgfiles | :base-directory | ~/Workplace/Org/Themes/src/ | :base-extension | org | :exclude | example | :publishing-directory | ~/Workplace/Org/Themes/public/ | :publishing-function | org-html-publish-to-html | :html-preamble | t | :recursive | t |
 | website  | :components     | (orgfiles)                  |                 |     |          |         |                       |                                |                      |                          |                |   |            |   |
 
+#+NAME: Help Function for creating setupfile from css
+#+begin_src emacs-lisp :exports none
+(defun make-setupfile-form-css (cssfile output)
+(with-temp-file output
+  (insert-file-contents cssfile)
+  (string-insert-rectangle (point-min) (point-max) "#+HTML_HEAD: ")
+  (goto-char (point-min))
+  (insert "#+HTML_HEAD: <style type=\"text/css\">\n")
+  (goto-char (point-max))
+  (insert "\n#+HTML_HEAD: </style>")))
+
+(make-setupfile-form-css "./latexcss/latexcss.css" "./latexcss/latexcss.theme")
+#+end_src
+
+#+RESULTS: Help Function for creating setupfile from css
 
 ** Irony
 There is a reason that this page has no custom css.
