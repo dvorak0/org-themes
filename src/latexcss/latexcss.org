@@ -6,6 +6,7 @@
 
 * LatexCSS
 Created by Vincent Döring: https://latex.now.sh/
+Add to org: #+HTML_HEAD: <link rel="stylesheet" href="https://latex.now.sh/style.css">
 
 Includes:
 - [X] CSS
