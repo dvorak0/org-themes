@@ -1,10 +1,12 @@
 #+SETUPFILE: ~/.emacs.d/org-styles/html/comfy_inline.theme 
 #+TITLE: comfy_inline
-#+AUTHOR: Unknown
+#+AUTHOR: Zhitao Gong
 #+EMAIL: mail@blablub.nil
 #+OPTIONS: ^:nil p:t
 
 * comfy_inline
+
+Original: https://gongzhitaao.org/orgcss/
 
 Includes:
 - [X] CSS
