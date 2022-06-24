@@ -16,7 +16,7 @@ inside =style= and =script= tags.
 
 Include it by using:
 #+begin_src emacs-lisp
-#+SETUPFILE: <path to .theme file>
+,#+SETUPFILE: <path to .theme file>
 #+end_src
   
 Every theme is rendered with the same org file. A plane version is also included.
@@ -33,7 +33,7 @@ I am happy to include any theme.
 
 ** The list of Themes:
 #+NAME: Themes list
-#+begin_src emacs-lisp :exports results
+#+begin_src emacs-lisp :exports none
 ;; https://kitchingroup.cheme.cmu.edu/blog/2014/03/23/Make-a-list-of-org-files-in-all-the-subdirectories-of-the-current-working-directory/
 (defun os-walk (root)
   (let ((files '()) ;empty list to store results
@@ -61,17 +61,15 @@ I am happy to include any theme.
 
 (mapcar 
  (lambda (x) (princ (format "[[%s][%s]]\n"  x (replace-regexp-in-string "\.org$" "" (replace-regexp-in-string "_" " " (replace-regexp-in-string ".*/" "" (file-relative-name x ".")))))))
- (remove-if-not 
+ (cl-remove-if-not 
   (lambda (x) (and (string= (file-name-extension x) "org") (not (string-match "example" x)) (not (string-match "index" x))))
   (os-walk "")))
 #+end_src
 
-
-
-#+RESULTS: Themes list
 | [[file:/home/olmon/Workplace/Org/Themes/src/bigblow_inline/bigblow.org][bigblow]]           |
 | [[file:/home/olmon/Workplace/Org/Themes/src/comfy_inline/comfy_inline.org][comfy inline]]      |
 | [[file:/home/olmon/Workplace/Org/Themes/src/darksun/darksun.org][darksun]]           |
+| [[file:/home/olmon/Workplace/Org/Themes/src/gray/gray.org][gray]]              |
 | [[file:/home/olmon/Workplace/Org/Themes/src/imagine_light/imagine_light.org][imagine light]]     |
 | [[file:/home/olmon/Workplace/Org/Themes/src/latexcss/latexcss.org][latexcss]]          |
 | [[file:/home/olmon/Workplace/Org/Themes/src/plain/plain.org][plain]]             |
