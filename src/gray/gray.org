@@ -6,13 +6,13 @@
 
 * Plain Org
 Includes:
-- [ ] CSS
+- [X] CSS
 - [ ] JAVASCRIPT
 
 Available as:
-- [ ] CSS FILE
+- [X] CSS FILE
 - [ ] JS FILE
-- [ ] SETUPFILE
+- [X] SETUPFILE
 
 * Lists
 ** Todo List
