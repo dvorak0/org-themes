@@ -418,8 +418,8 @@ div.figure {
                 height: 100vh;
                 font-size: 11px;
                 background: #eee;
-                overlow-x: hidden;
-                overlow-y: auto;
+                overflow-x: hidden;
+                overflow-y: auto;
             }
     
         #table-of-contents h2 {

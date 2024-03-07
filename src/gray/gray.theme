@@ -422,8 +422,8 @@
 #+HTML_HEAD:         height: 100vh;
 #+HTML_HEAD:         font-size: 11px;
 #+HTML_HEAD:         background: #eee;
-#+HTML_HEAD:         overlow-x: hidden;
-#+HTML_HEAD:         overlow-y: auto;
+#+HTML_HEAD:         overflow-x: hidden;
+#+HTML_HEAD:         overflow-y: auto;
 #+HTML_HEAD:     }
 #+HTML_HEAD: 
 #+HTML_HEAD:     #table-of-contents h2 {
